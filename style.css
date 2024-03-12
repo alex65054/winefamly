@@ -303,7 +303,7 @@ main {
     border: 3px solid hsl(166, 92%, 26%);
     border-radius: 50px;
     width: 60%;
-    transition-property: background-color border-color;
+    transition-property: background-color, border-color;
     transition-duration: 100ms;
 }
 
@@ -374,12 +374,42 @@ main {
         opacity: 0;
     }
 
+    .alt-menu input:hover {
+        cursor: pointer;
+    }
+
     .alt-menu input:checked ~ .menu-close {
         opacity: 1;
     }
 
     .alt-menu input:checked ~ .menu-open {
         opacity: 0;
+    }
+
+    .logo-login-bar:has(.alt-menu input:checked) ~ nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 168px;
+        background-color: rgba(0,0,0,.5);
+        padding-top: 50px;
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        box-sizing: border-box;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        transition-property: color, background-color;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, .5);
     }
 
 
